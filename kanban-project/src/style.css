@@ -176,17 +176,21 @@ nav button[aria-pressed="false"]{
 .board {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     grid-template-rows: minmax(0, 1fr);
      gap: 24px;
      flex-grow: 1;
+     min-height: 0;
 }
 
 /* ---------- 5. COLONNE ---------- */
 .column {
-  padding: 0 25px;
+  padding: 0 15px 15px 15px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   border-radius: 15px;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 /* Une classe par colonne : seule la couleur change */
@@ -206,6 +210,20 @@ nav button[aria-pressed="false"]{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.column--todo .column__header {
+  background-color: var(--todo-bg);
+}
+
+.column--doing .column__header {
+  background-color: var(--doing-bg);
+}
+
+.column--done .column__header {
+  background-color: var(--done-bg);
 }
 
 .dot--header {
@@ -365,7 +383,7 @@ input:focus-visible {
 
 /* mobile version */
 
-@media (max-width: 767px) {
+@media (max-width: 920px) {
   nav {
     display: grid;
   }
@@ -391,6 +409,19 @@ input:focus-visible {
 
   nav button span {
     color: #2e1b12;
+  }
+
+  .column {
+    padding: 15px;
+  }
+
+
+  .column--done, .column--doing {
+    display: none;
+  }
+
+  .column__header {
+    display: none;
   }
 }
 
