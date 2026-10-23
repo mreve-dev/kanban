@@ -1,13 +1,96 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
     <title>kanban-project</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <header>
+      <h1>Mon Kanban</h1>
+
+      <form class="add-form">
+        <input
+          type="text"
+          id="new-card"
+          aria-label="Nouvelle tâche"
+          placeholder="Nouvelle tâche..."
+        />
+        <button type="submit" class="btn-primary">+ Ajouter</button>
+      </form>
+    </header>
+
+    <nav>
+      <button type="button" class="todo-text" aria-pressed="true" data-status="todo">
+        <i class="fa-regular fa-circle"></i>
+        À faire
+        <span> 0 </span>
+      </button>
+      <button type="button" class="doing-text" aria-pressed="false" data-status="doing">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+        En cours
+        <span> 0 </span>
+      </button>
+      <button type="button" class="done-text" aria-pressed="false" data-status="done">
+        <i class="fa-regular fa-circle-check"></i>
+        Terminé
+        <span> 0 </span>
+      </button>
+    </nav>
+
+    <main class="board">
+      <article class="column column--todo is-active" data-status="todo">
+        <div class="column__header">
+          <div class="dot--header">
+            <h2 class="todo-text">
+              <i class="fa-regular fa-circle"></i>
+              À faire
+            </h2>
+          </div>
+
+          <p class="column__count todo__count">0</p>
+        </div>
+      </article>
+
+      <article class="column column--doing" data-status="doing">
+        <div class="column__header">
+          <div class="dot--header">
+            <h2 class="doing-text">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+              En cours
+            </h2>
+          </div>
+
+          <p class="column__count doing__count">0</p>
+        </div>
+      </article>
+
+      <article class="column column--done" data-status="done">
+        <div class="column__header">
+          <div class="dot--header">
+            <h2 class="done-text">
+              <i class="fa-regular fa-circle-check"></i>
+              Terminé
+            </h2>
+          </div>
+
+          <p class="column__count done__count">0</p>
+        </div>
+      </article>
+    </main>
+
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
