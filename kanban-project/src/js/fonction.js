@@ -110,3 +110,16 @@ export async function deleteCard(card) {
 //deleteCard({
 //    id : 1,
 //})
+
+
+const statuses = ['todo', 'doing', 'done']
+
+export function updateCounters() {
+    statuses.forEach((status) => {
+        const nb = document.querySelectorAll(`.column--${status} .card`).length
+        
+        document.querySelector(`.${status}__count`).textContent = nb
+
+        document.querySelector(`nav .${status}-text span`).textContent = nb
+    })
+}

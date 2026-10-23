@@ -184,7 +184,7 @@ nav button[aria-pressed="false"]{
 
 /* ---------- 5. COLONNE ---------- */
 .column {
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 15px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -404,20 +404,16 @@ input:focus-visible {
   }
 
   .column{
-    padding: 10px 15px;
+    padding: 15px;
+    display: none;
   }
 
   nav button span {
     color: #2e1b12;
   }
 
-  .column {
-    padding: 15px;
-  }
-
-
-  .column--done, .column--doing {
-    display: none;
+  .column.is-active {
+    display: flex;
   }
 
   .column__header {

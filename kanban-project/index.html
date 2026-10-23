@@ -33,17 +33,17 @@
     </header>
 
     <nav>
-      <button type="button" class="todo-text" aria-pressed="true">
+      <button type="button" class="todo-text" aria-pressed="true" data-status="todo">
         <i class="fa-regular fa-circle"></i>
         À faire
         <span> 0 </span>
       </button>
-      <button type="button" class="doing-text" aria-pressed="false">
+      <button type="button" class="doing-text" aria-pressed="false" data-status="doing">
         <i class="fa-solid fa-circle-half-stroke"></i>
         En cours
         <span> 0 </span>
       </button>
-      <button type="button" class="done-text" aria-pressed="false">
+      <button type="button" class="done-text" aria-pressed="false" data-status="done">
         <i class="fa-regular fa-circle-check"></i>
         Terminé
         <span> 0 </span>
@@ -51,7 +51,7 @@
     </nav>
 
     <main class="board">
-      <article class="column column--todo">
+      <article class="column column--todo is-active">
         <div class="column__header">
           <div class="dot--header">
             <h2 class="todo-text">
