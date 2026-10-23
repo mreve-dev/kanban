@@ -57,7 +57,7 @@ body {
   gap: 32px;
   font-family: var(--font-body);
   height: 100vh;
-  padding: 30px 0;
+  padding: 30px 10px;
   background-color: var(--bg);
   max-width: 1100px;
 }
@@ -74,6 +74,17 @@ h2{
   align-items: center;
   gap: 8px;
 }
+
+nav {
+  display: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  padding: 5px;
+  width: 100%;
+  background-color: var(--doing-bg);
+  border-radius: 12px;
+}
+
 
 .todo-text {
   color: var(--todo-text);
@@ -99,10 +110,10 @@ header {
 
 .add-form {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 8px;
-  flex: 0 1 480px;
+  flex: 0 1 480px
 }
 
 .add-form input {
@@ -117,8 +128,35 @@ header {
   font: inherit;
 }
 
+button {
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 12px;
+  padding: 5px ;
+}
+
+nav button[aria-pressed="true"] {
+  background-color: var(--surface);
+  box-shadow: var(--shadow);
+  border: none;
+}
+
+
+nav button[aria-pressed="false"]{
+  background-color: transparent;
+  border: none;
+}
+
+
+
 .btn-primary {
   background-color: var(--primary);
+  white-space: nowrap;
   color: white;
   padding: 10px 20px;
   border-radius: 12px;
@@ -263,6 +301,7 @@ background-color: var(--done-accent);
   border: 3px solid var(--border);
   background-color: var(--bg);
   border-radius: 5px;
+  width: 50px;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -276,10 +315,10 @@ background-color: var(--done-accent);
 
 .btn-delete {
   background-color: transparent;
-  border: 3px solid var(--danger);
+  border: none;
   color: var(--danger);
   border-radius: 5px;
-  padding: 5px 15px;
+  padding: 5px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -313,4 +352,52 @@ input:focus-visible {
 .column--done.is-over {
   outline: 3px solid var(--done-accent);
   outline-offset: -3px;
+}
+
+
+
+
+
+
+
+
+
+
+/* mobile version */
+
+@media (max-width: 767px) {
+  nav {
+    display: grid;
+  }
+
+  
+  header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .add-form {
+    flex: none;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  .column{
+    padding: 10px 15px;
+  }
+
+  nav button span {
+    color: #2e1b12;
+  }
+}
+
+@media (max-width: 400px) {
+  nav button {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
 }

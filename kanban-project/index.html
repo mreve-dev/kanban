@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,25 +32,30 @@
       </form>
     </header>
 
+    <nav>
+      <button type="button" class="todo-text" aria-pressed="true">
+        <i class="fa-regular fa-circle"></i>
+        À faire
+        <span> 0 </span>
+      </button>
+      <button type="button" class="doing-text" aria-pressed="false">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+        En cours
+        <span> 0 </span>
+      </button>
+      <button type="button" class="done-text" aria-pressed="false">
+        <i class="fa-regular fa-circle-check"></i>
+        Terminé
+        <span> 0 </span>
+      </button>
+    </nav>
+
     <main class="board">
       <article class="column column--todo">
         <div class="column__header">
           <div class="dot--header">
             <h2 class="todo-text">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle preview-icon"
-              >
-                <circle cx="12" cy="12" r="10" />
-              </svg>
+              <i class="fa-regular fa-circle"></i>
               À faire
             </h2>
           </div>
@@ -54,28 +63,44 @@
           <p class="column__count todo__count">0</p>
         </div>
 
+        <article class="card" draggable="true">
+          <p class="card__title">Créer la table cards en BDD</p>
 
-        
+          <div class="card__actions">
+            <div class="card__moves">
+              <button
+                type="button"
+                class="btn-move"
+                aria-label="Déplacer vers la colonne précédente"
+                disabled
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                class="btn-move"
+                aria-label="Déplacer vers la colonne suivante"
+              >
+                →
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="btn-delete"
+              aria-label="Supprimer la carte"
+            >
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </article>
       </article>
 
       <article class="column column--doing">
         <div class="column__header">
           <div class="dot--header">
             <h2 class="doing-text">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor" />
-                <circle cx="12" cy="12" r="10" />
-              </svg>
+              <i class="fa-solid fa-circle-half-stroke"></i>
               En cours
             </h2>
           </div>
@@ -88,21 +113,7 @@
         <div class="column__header">
           <div class="dot--header">
             <h2 class="done-text">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-check-big preview-icon"
-              >
-                <path d="M21.801 10A10 10 0 1 1 17 3.335" />
-                <path d="m9 11 3 3L22 4" />
-              </svg>
+              <i class="fa-regular fa-circle-check"></i>
               Terminé
             </h2>
           </div>
