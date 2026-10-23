@@ -359,17 +359,17 @@ input:focus-visible {
 
 .column--todo.is-over {
   outline: 3px solid var(--todo-accent);
-  outline-offset: -3px;
+  outline-offset: 0px;
 }
 
 .column--doing.is-over {
   outline: 3px solid var(--doing-text);
-  outline-offset: -3px;
+  outline-offset: 0x;
 }
 
 .column--done.is-over {
   outline: 3px solid var(--done-accent);
-  outline-offset: -3px;
+  outline-offset: 0px;
 }
 
 

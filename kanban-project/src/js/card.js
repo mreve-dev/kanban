@@ -47,6 +47,8 @@ export const renderCard = (card) => {
     }
   };
 
+  articleCard.moveTo = moveTo
+
   btnRight.classList.add("btn-move");
   btnDelete.classList.add("btn-delete");
 
